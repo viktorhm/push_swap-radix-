@@ -51,7 +51,6 @@ void	little_sort3(t_node **stack)
 		ra(stack);
 	else if ((*stack)->next->value == max_high)
 		rra(stack);
-
 	if ((*stack)->value > (*stack)->next->value)
 		sa(stack);
 }

@@ -56,11 +56,11 @@ int	not_repet(int nbr, t_node *a)
 	return (0);
 }
 
-int	error_free(t_node **a ,int leak)
+int	error_free(t_node **a, int leak)
 {
-	if(leak == 1)
+	if (leak == 0)
 		free_stack(*a);
-	write(1, "erreur", 4);
+	write(1, "erreur", 6);
 	return (0);
 }
 
@@ -73,12 +73,12 @@ int	init_stack(t_node **a, char **argv, int leak)
 	while (argv[i])
 	{
 		if (error_char(argv[i]))
-			error_free(a,leak);
+			return(error_free(a, leak));
 		nbr = ft_atoi(argv[i]);
 		if (nbr > 2147483647 || nbr < -2147483648)
-			error_free(a, leak);
+			return(error_free(a, leak));
 		if (not_repet(nbr, *a))
-			error_free(a, leak);
+			return(error_free(a, leak));
 		else
 			add_node(a, (int)nbr);
 		i++;

@@ -75,7 +75,7 @@ int	main(int argc, char *argv[])
 
 	a = NULL ;
 	b = NULL ;
-	if ((argc == 1 || argc == 2 ) && !argv[1][0])
+	if ((argc == 1 || argc == 2) && !argv[1][0])
 	{
 		write(1, "erreur", 6);
 		return (0);
