@@ -6,13 +6,13 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:39:58 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/27 12:20:29 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/31 13:00:58 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long int	ft_atoi(const char *str )
+long	ft_atoi(const char *str )
 {
 	long int	result;
 	int			i;

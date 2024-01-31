@@ -51,7 +51,7 @@ void	get_index(t_node **stack);
 t_node	*find_last_node(t_node *stack);
 int		error_char(char *argv);
 int		not_repet(int nbr, t_node *a);
-int		error_free(t_node **a ,int leak);
+int		error_free(t_node **a, int leak);
 int		init_stack(t_node **a, char **argv, int leak );
 
 // split
@@ -59,9 +59,8 @@ size_t	ft_strlen(char const *str);
 char	**ft_split(char const *s, char c);
 
 // ft_atoi
-long int	ft_atoi(const char *str );
-int	get_distance_node(t_node **stack, int index);
-
+int		get_distance_node(t_node **stack, int index);
+long	ft_atoi(const char *str);
 // base
 void	sa(t_node **head);
 void	sb(t_node **head);

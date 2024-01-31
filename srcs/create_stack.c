@@ -73,12 +73,12 @@ int	init_stack(t_node **a, char **argv, int leak)
 	while (argv[i])
 	{
 		if (error_char(argv[i]))
-			return(error_free(a, leak));
+			return (error_free(a, leak));
 		nbr = ft_atoi(argv[i]);
 		if (nbr > 2147483647 || nbr < -2147483648)
-			return(error_free(a, leak));
+			return (error_free(a, leak));
 		if (not_repet(nbr, *a))
-			return(error_free(a, leak));
+			return (error_free(a, leak));
 		else
 			add_node(a, (int)nbr);
 		i++;
