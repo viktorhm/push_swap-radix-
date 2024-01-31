@@ -6,17 +6,24 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:39:58 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/31 13:00:58 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:33:08 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atoi(const char *str )
+static long	size_max(int result)
 {
-	long int	result;
-	int			i;
-	int			value_oper;
+	if (result > 2147483647 || result < -2147483648)
+		return (2147483648);
+	return (result);
+}
+
+long long	ft_atoi(const char *str )
+{
+	long long int	result;
+	int				i;
+	int				value_oper;
 
 	value_oper = 1;
 	result = 0 ;
@@ -32,7 +39,10 @@ long	ft_atoi(const char *str )
 	if (str[i] == '-' || str[i] == '+')
 		return (0);
 	while (str[i] >= '0' && str[i] <= '9')
+	{
 		result = result * 10 + str[i++] - '0';
+		result = size_max(result);
+	}
 	return (result * value_oper);
 }
 

@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:59:06 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/27 13:17:10 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:28:19 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ int	main(int argc, char *argv[])
 
 	a = NULL ;
 	b = NULL ;
-	if ((argc == 1 || argc == 2) && !argv[1][0])
+	if (argc == 1)
 	{
-		write(1, "erreur", 6);
+		write(1, "\n", 1);
 		return (0);
 	}
 	if (argc == 2)
@@ -89,6 +89,8 @@ int	main(int argc, char *argv[])
 	else
 		nb_value = init_stack(&a, argv + 1, 0);
 	how_to_sort(&a, &b, nb_value);
+	if (nb_value == 0)
+		return (0);
 	free_stack(a);
 	free_stack(b);
 	return (0);
