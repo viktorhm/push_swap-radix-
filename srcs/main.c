@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 12:59:06 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/31 17:28:19 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/02/09 10:48:40 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ int	main(int argc, char *argv[])
 	}
 	else
 		nb_value = init_stack(&a, argv + 1, 0);
-	how_to_sort(&a, &b, nb_value);
-	if (nb_value == 0)
+	if (nb_value == 1)
 		return (0);
+	how_to_sort(&a, &b, nb_value);
 	free_stack(a);
 	free_stack(b);
 	return (0);

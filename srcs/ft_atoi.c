@@ -6,16 +6,18 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:39:58 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/31 17:33:08 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:02:42 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long	size_max(int result)
+static long	size_max(long long result)
 {
-	if (result > 2147483647 || result < -2147483648)
-		return (2147483648);
+	if (result > 2147483647 || result < -2147483647)
+	{
+		return (2147483649);
+	}
 	return (result);
 }
 

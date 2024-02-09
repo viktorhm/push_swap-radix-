@@ -6,7 +6,7 @@
 /*   By: vharatyk <vharatyk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:45:51 by vharatyk          #+#    #+#             */
-/*   Updated: 2024/01/31 17:25:04 by vharatyk         ###   ########.fr       */
+/*   Updated: 2024/02/09 10:48:24 by vharatyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,16 @@ int	not_repet(int nbr, t_node *a)
 int	error_free(t_node **a, int leak)
 {
 	if (leak == 0)
+	{
 		free_stack(*a);
-	write(1, "error\n", 6);
-	return (0);
+		write(1, "error\n", 6);
+		return (1);
+	}
+	else
+	{
+		write(1, "error\n", 6);
+		return (0);
+	}
 }
 
 int	init_stack(t_node **a, char **argv, int leak)
@@ -76,7 +83,9 @@ int	init_stack(t_node **a, char **argv, int leak)
 			return (error_free(a, leak));
 		nbr = ft_atoi(argv[i]);
 		if (nbr > 2147483647 || nbr < -2147483648)
+		{
 			return (error_free(a, leak));
+		}
 		else if (not_repet(nbr, *a))
 			return (error_free(a, leak));
 		else
